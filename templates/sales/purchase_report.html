@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Purchase Report{% endblock %}
+
+{% block content %}
+<h2>Purchase Report</h2>
+<p>Total Purchases for This Month: ${{ total_purchases }}</p>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Owner</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase in purchases %}
+        <tr>
+            <td>{{ purchase.product.name }}</td>
+            <td>{{ purchase.quantity }}</td>
+            <td>${{ purchase.price }}</td>
+            <td>{{ purchase.owner.username }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

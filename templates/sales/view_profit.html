@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}View Profit{% endblock %}
+
+{% block content %}
+<h2>Profit Overview</h2>
+<p>Total Profit: ${{ profit }}</p>
+<a href="{% url 'sales:generate-report' %}">Generate Monthly Report</a>
+{% endblock %}

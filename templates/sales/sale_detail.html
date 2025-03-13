@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Sale Detail{% endblock %}
+
+{% block content %}
+<h2>Sale Detail</h2>
+<p>Date: {{ sale.date }}</p>
+<p>Total Amount: ${{ sale.total_amount }}</p>
+<p>Payment Method: {{ sale.payment_method }}</p>
+<p>Cashier: {{ sale.cashier.username }}</p>
+<h3>Items</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in sale_items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'sales:sale-list' %}">Back to Sales</a>
+{% endblock %}

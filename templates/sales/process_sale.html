@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Process Sale{% endblock %}
+
+{% block content %}
+<h2>Process Sale</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ sale_form.as_p }}
+    {{ sale_item_form.as_p }}
+    <button type="submit">Complete Sale</button>
+</form>
+<a href="{% url 'sales:sale-list' %}">Cancel</a>
+{% endblock %}
