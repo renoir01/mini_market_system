@@ -41,3 +41,7 @@ def product_delete(request, pk):
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'inventory/product_list.html', {'products': products})
+
+# Add the missing dashboard view
+def dashboard(request):
+    return render(request, 'inventory/dashboard.html')
