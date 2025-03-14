@@ -8,4 +8,5 @@ urlpatterns = [
     path('products/<int:pk>/edit/', views.product_edit, name='product-edit'),
     path('products/<int:pk>/delete/', views.product_delete, name='product-delete'),
     path('products/', views.product_list, name='product-list'),
+    path('', views.inventory_home, name='inventory-home'),  # Add this line for inventory/
 ]

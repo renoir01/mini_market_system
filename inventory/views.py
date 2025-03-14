@@ -3,6 +3,8 @@ from django.contrib import messages
 from .models import Product
 from .forms import ProductForm
 
+def inventory_home(request):
+    return render(request, 'inventory/home.html')
 def product_add(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)

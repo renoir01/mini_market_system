@@ -8,5 +8,6 @@ urlpatterns = [
     path('sales/', include('sales.urls')),
     path('users/', include('users.urls')),
     path('dashboard/', dashboard, name='dashboard'),
+    path('api/', include('api.urls')),  # Add this line to include api.urls
     path('', include('django.contrib.auth.urls')),  # For login, logout, password management
 ]

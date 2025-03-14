@@ -19,6 +19,7 @@ class Purchase(models.Model):
     pass
 
 class Refund(models.Model):
+    sale = models.ForeignKey(Sale, related_name='refunds', on_delete=models.CASCADE)
     reason = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
